@@ -1,0 +1,13 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: MyOrg.${{ values.projectName }}
+  description: MyOrg.${{ values.projectName }} project.
+  tags:
+    - dotnet
+    - api
+    - microservice
+spec:
+  type: service
+  lifecycle: experimental
+  owner: ${{ values.owner }}

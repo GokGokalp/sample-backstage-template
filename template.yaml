@@ -1,0 +1,63 @@
+apiVersion: scaffolder.backstage.io/v1beta3
+kind: Template
+metadata:
+  name: dotnet-api-template
+  title: .NET 9 API Template
+  description: Scaffolds a .NET 9 Web API project with Dockerfile and CI
+  tags:
+    - dotnet
+    - api
+    - microservice
+spec:
+  type: service
+  lifecycle: experimental
+  owner: platform
+  parameters:
+    - title: .NET API project information
+      required:
+        - projectName
+        - port
+        - owner
+      properties:
+        projectName:
+          title: Project Name
+          type: string
+          description: Unique name of the .NET API project.
+        port:
+          title: Port
+          type: number
+          description: Port the API will run on (e.g. 5000)
+        owner:
+          title: Team Name
+          type: string
+          description: Name of the team that will own this service.
+  steps:
+    - id: fetch-base
+      name: Fetch Base
+      action: fetch:template
+      input:
+        url: ./skeleton
+        values:
+          projectName: ${{ parameters.projectName }}
+          port: ${{ parameters.port }}
+          owner: ${{ parameters.owner }}
+
+    - id: publish
+      name: Publish to GitHub
+      action: publish:github
+      input:
+        repoUrl: github.com?owner=GokGokalp&repo=${{ parameters.projectName }}
+        defaultBranch: 'main'
+        title: Initial commit
+
+    - id: register
+      name: Register
+      action: catalog:register
+      input:
+        repoContentsUrl: ${{ steps['publish'].output.repoContentsUrl }}
+        catalogInfoPath: '/catalog-info.yaml'
+
+  output:
+    links:
+      - title: Go to generated project
+        url: https://github.com/GokGokalp/${{ parameters.projectName }}
