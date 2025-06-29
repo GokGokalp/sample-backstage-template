@@ -8,6 +8,8 @@ metadata:
     - api
     - microservice
     - ${{ values.owner }}
+  annotations:
+    github.com/workflows: "ci.yml"
 spec:
   type: service
   lifecycle: experimental
