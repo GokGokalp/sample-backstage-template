@@ -11,7 +11,7 @@ metadata:
 spec:
   type: service
   lifecycle: experimental
-  owner: platform
+  owner: user:guest
   parameters:
     - title: .NET API project information
       required:
