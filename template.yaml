@@ -8,6 +8,7 @@ metadata:
     - dotnet
     - api
     - microservice
+    - starter-api-app
   annotations:
     backstage.io/techdocs-ref: dir:.
 spec:
