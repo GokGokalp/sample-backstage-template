@@ -51,7 +51,6 @@ spec:
       input:
         repoUrl: github.com?owner=GokGokalp&repo=${{ parameters.projectName }}
         defaultBranch: 'main'
-        title: Initial commit
 
     - id: register
       name: Register
