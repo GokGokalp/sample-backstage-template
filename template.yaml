@@ -57,7 +57,6 @@ spec:
       action: catalog:register
       input:
         catalogInfoUrl: https://github.com/GokGokalp/${{ parameters.projectName }}/blob/main/catalog-info.yaml
-        catalogInfoPath: '/catalog-info.yaml'
 
   output:
     links:
