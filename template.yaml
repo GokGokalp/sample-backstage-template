@@ -56,7 +56,7 @@ spec:
       name: Register
       action: catalog:register
       input:
-        repoContentsUrl: ${{ steps['publish'].output.repoContentsUrl }}
+        catalogInfoUrl: https://github.com/GokGokalp/${{ parameters.projectName }}/blob/main/catalog-info.yaml
         catalogInfoPath: '/catalog-info.yaml'
 
   output:
