@@ -10,6 +10,8 @@ metadata:
     - ${{ values.owner }}
   annotations:
     backstage.io/techdocs-ref: dir:.
+    backstage.io/source-location: url:${{ steps.publish.output.repoContentsUrl }}
+    backstage.io/managed-by-location: url:${{ steps.publish.output.repoContentsUrl }}/catalog-info.yaml
 spec:
   type: service
   lifecycle: experimental
