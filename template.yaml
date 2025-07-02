@@ -56,8 +56,7 @@ spec:
       name: Register
       action: catalog:register
       input:
-        catalogInfoUrl: "${{ steps['publish'].output.remoteUrl | replace('.git','') }}/blob/main/catalog-info.yaml"
-
+        catalogInfoUrl: "url:${{ steps['publish'].output.remoteUrl | replace('.git','') }}/blob/main/catalog-info.yaml"
 
   output:
     links:
