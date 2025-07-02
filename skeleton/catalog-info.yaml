@@ -10,8 +10,7 @@ metadata:
     - ${{ values.owner }}
   annotations:
     backstage.io/techdocs-ref: dir:.
-    backstage.io/source-location: url:${{ steps.publish.output.repoContentsUrl }}
-    backstage.io/managed-by-location: url:${{ steps.publish.output.repoContentsUrl }}/catalog-info.yaml
+    backstage.io/source-location: url:https://github.com/GokGokalp/${{ values.projectName }}/
 spec:
   type: service
   lifecycle: experimental
