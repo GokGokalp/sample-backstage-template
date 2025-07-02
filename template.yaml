@@ -52,12 +52,6 @@ spec:
         repoUrl: github.com?owner=GokGokalp&repo=${{ parameters.projectName }}
         defaultBranch: 'main'
 
-    - id: register
-      name: Register in catalog
-      action: catalog:register
-      input:
-        catalogInfoUrl: "${{ steps['publish'].output.remoteUrl | replace('.git','') }}/tree/main/catalog-info.yaml"
-
   output:
     links:
       - title: Go to generated project
