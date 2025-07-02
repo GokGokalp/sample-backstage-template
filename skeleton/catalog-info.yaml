@@ -11,6 +11,7 @@ metadata:
   annotations:
     backstage.io/techdocs-ref: dir:.
     backstage.io/source-location: url:https://github.com/GokGokalp/${{ values.projectName }}/
+    backstage.io/managed-by-location: url:https://github.com/GokGokalp/${{ values.projectName }}/tree/main/catalog-info.yaml
 spec:
   type: service
   lifecycle: experimental
