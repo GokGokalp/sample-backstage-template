@@ -10,7 +10,6 @@ metadata:
     - ${{ values.owner }}
   annotations:
     backstage.io/techdocs-ref: dir:.
-    backstage.io/managed-by-location: url:https://github.com/GokGokalp/${{ values.projectName }}/blob/main/catalog-info.yaml
 spec:
   type: service
   lifecycle: experimental
