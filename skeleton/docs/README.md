@@ -1,2 +1,2 @@
-# MyOrg.${{ values.projectName }} API
+# MyOrg.${{ values.projectName }}
 This service was generated using the golden path template.
